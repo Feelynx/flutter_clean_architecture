@@ -1,0 +1,17 @@
+{
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "requiredField": "Required field",
+  "shortPassword": "The password must contain at least 6 characters",
+  "home": "Home",
+  "movies": "Movies",
+  "movieDuration": "Duration: {duration}",
+  "profile": "Profile",
+  "settings": "Settings",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System",
+  "genericErrorTitle" : "Generic error",
+  "genericErrorMessage" : "An error occurred"
+}

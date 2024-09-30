@@ -1,0 +1,17 @@
+{
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "requiredField": "Campo obbligatorio",
+  "shortPassword": "La password deve contenere almeno 6 caratteri",
+  "home": "Home",
+  "movies": "Lista film",
+  "movieDuration": "Durata: {duration}",
+  "profile": "Profilo",
+  "settings": "Impostazioni",
+  "light": "Chiaro",
+  "dark": "Scuro",
+  "system": "Sistema",
+  "genericErrorTitle" : "Errore generico",
+  "genericErrorMessage" : "Si è verificato un errore"
+}
