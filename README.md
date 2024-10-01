@@ -1,10 +1,18 @@
+## Run the project
+
+1. Execute flutter pub get to install the dependencies.
+2. Execute dart run build_runner build to generate the mappers.
+3. Execute flutter gen-l10n to generate the localization files.
+
+Alternatively you can use the following command to execute all the steps at once, executing the `first_boot_init.sh` script from terminal:
+
+    sh first_boot_init.sh
+
+The app is realized using the user from Dummy JSON API, you can find the users here https://dummyjson.com/users.
+
 # Flutter Clean Architecture
 
 This project follows the principles of Clean Architecture, which separates the code into different layers: DTOs, Entities, Data Sources, Repositories, and Use Cases. This separation helps in maintaining a clear structure, making the code more maintainable and testable.
-
-## Users to use the app
-the app is realized using the user from Dummy JSON API, you can find the users here:
-[https://dummyjson.com/users]
 
 ## Layers
 
