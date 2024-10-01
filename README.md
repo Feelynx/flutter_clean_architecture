@@ -1,4 +1,4 @@
-🛠 Getting Started: Your First Steps Towards Awesomeness!
+## **Getting Started: Your First Steps Towards Awesomeness!** 🛠 
 
 Install the Dependencies – Time to grab all the tools you need!
 Run:
@@ -19,14 +19,14 @@ Run:
 
     sh first_boot_init.sh
 
-🌍 What’s This App All About?
+## **What’s This App All About?** 🌍 
 
 This app is powered by Dummy JSON API! 🤖 No real data here, just some good ol’ fashioned dummy users to play with. Want to check them out?
 
 Be sure to recover some users to login in the app here!
 👉 [Dummy JSON Users](https://dummyjson.com/users)
 
-📚 Deep Dive into Clean Architecture
+## **Deep Dive into Clean Architecture** 📚 
 
 We’ve crafted this project using the principles of Clean Architecture to make sure your codebase stays sharp, scalable, and… well, CLEAN! 🧼
 
@@ -34,7 +34,7 @@ If you’re curious about the magic happening under the hood or want to learn ho
 
 📖 [Wiki: Flutter Clean Architecture](https://github.com/Feelynx/flutter_clean_architecture/wiki)
 
-🎉 Ready, Set, Code! 🎉
+## **Ready, Set, Code!** 🎉
 
 You’re all set! Time to code like a rockstar and bring Clean Architecture to life! If you run into any issues, don’t hesitate to explore the docs, ask a question, or just break things (safely 😉)!
 
