@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_clean_architecture/features/bottom_navigation/profile/cubit/profile_cubit.dart';
 import 'package:flutter_clean_architecture/features/shared/error_dialog.dart';
 import 'package:flutter_clean_architecture/features/shared/loading_widget.dart';
+import 'package:gap/gap.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -18,12 +19,60 @@ class ProfilePage extends StatelessWidget {
         },
         builder: (context, state) => switch (state) {
           ProfileInitial() || ProfileLoading() => const LoadingWidget(),
-          ProfileLoaded() => Column(
-              children: [
-                Text(state.user.firstName ?? ''),
-                Text(state.user.lastName ?? ''),
-                Text(state.user.email ?? ''),
-              ],
+          ProfileLoaded() => SingleChildScrollView(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        radius: 50,
+                        backgroundImage: NetworkImage(state.user.image ?? ''),
+                      ),
+                    ],
+                  ),
+                  const Gap(16),
+                  Text(
+                    '${state.user.firstName} ${state.user.lastName}',
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Gap(8),
+                  Text(
+                    '${state.user.company?.title}\n@${state.user.company?.name}' ?? '',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  const Gap(24),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ListTile(
+                        contentPadding: EdgeInsets.zero,
+                        title: const Text(
+                          'Contacts',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('${state.user.email}'),
+                            Text('${state.user.phone}'),
+                            Text('${state.user.university}'),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           _ => Container(),
         },

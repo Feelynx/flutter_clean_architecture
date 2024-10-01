@@ -40,7 +40,7 @@ final goRouter = GoRouter(
     GoRoute(
       path: ScreenPaths.login,
       builder: (context, state) => BlocProvider(
-        create: (context) => LoginCubit(),
+        create: (context) => LoginCubit(authUseCases),
         child: const LoginScreen(),
       ),
     ),

@@ -20,7 +20,7 @@ class ProfileCubit extends Cubit<ProfileState> {
         emit(ProfileLoaded(data));
       },
       (error) {
-        emit(ProfileError(error));
+        emit(ProfileError(error.toString()));
       },
     );
   }

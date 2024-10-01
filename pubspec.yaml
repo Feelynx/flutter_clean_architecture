@@ -18,6 +18,9 @@ dependencies:
   # DI
   get_it: ^8.0.0
 
+  # Layout
+  gap: ^3.0.1
+
   # Networking
   dio: ^5.7.0
   retrofit: ^4.4.1
@@ -44,7 +47,7 @@ dependencies:
   equatable: ^2.0.5
 
   # Local db
-  drift: ^2.20.2
+  drift: ^2.20.3
   drift_flutter: ^0.2.0
 
 dev_dependencies:
@@ -53,7 +56,7 @@ dev_dependencies:
 
   freezed: ^2.5.7
   flutter_lints: ^5.0.0
-  build_runner: ^2.4.12
+  build_runner: ^2.4.13
   json_serializable: ^6.8.0
   retrofit_generator: ^9.1.2
   flutter_native_splash: ^2.4.1

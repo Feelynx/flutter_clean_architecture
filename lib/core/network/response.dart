@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+
 sealed class ResponseWrapper<T> {
   K when<K>(
     K Function(T data) isSuccess,
@@ -30,6 +32,9 @@ Future<ResponseWrapper<T>> execute<T>(
     final response = await operation();
     return Success(response);
   } catch (e) {
+    if (e is DioException) {
+      return Error(e.response?.data['message'] ?? '');
+    }
     return onError?.call(e) ?? Error(e.toString());
   }
 }

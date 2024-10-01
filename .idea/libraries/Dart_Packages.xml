@@ -394,6 +394,13 @@
             </list>
           </value>
         </entry>
+        <entry key="gap">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/gap-3.0.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="geolocator">
           <value>
             <list>
@@ -1071,6 +1078,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/freezed-2.5.7/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/freezed_annotation-2.4.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/frontend_server_client-4.0.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/gap-3.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/geolocator-13.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/geolocator_android-4.6.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/geolocator_apple-2.3.7/lib" />

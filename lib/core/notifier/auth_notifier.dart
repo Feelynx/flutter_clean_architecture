@@ -12,19 +12,19 @@ class AuthNotifier with ChangeNotifier {
   AuthStatus get status => _status;
   LoginResponseEntity? get loginResponseEntity => _loginResponseEntity;
 
-  Future<void> doLogin(LoginRequestEntity authRequestEntity) async {
-    final result = await authUseCases.getToken(authRequestEntity);
-    result.when(
-      (data) async {
-        if (data.accessToken != null && data.refreshToken != null) {
-          await authUseCases.setLocalAuthToken(data);
-          _loginResponseEntity = data;
-          _status = AuthStatus.authenticated;
-          notifyListeners();
-        }
-      },
-      (error) => doLogout(),
-    );
+  Future<void> doLogin(LoginResponseEntity? loginResponseEntity) async {
+    if (loginResponseEntity == null) {
+      doLogout();
+      return;
+    }
+    if (loginResponseEntity.accessToken == null || loginResponseEntity.refreshToken == null) {
+      doLogout();
+      return;
+    }
+    await authUseCases.setLocalAuthToken(loginResponseEntity);
+    _loginResponseEntity = loginResponseEntity;
+    _status = AuthStatus.authenticated;
+    notifyListeners();
   }
 
   Future<void> checkToken() async {
