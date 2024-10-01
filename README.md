@@ -15,7 +15,13 @@ Run:
 
     flutter gen-l10n
 
-**Feeling Lazy?** No worries! 😎 We’ve got you covered. Execute all the above in one swift command using our supercharged first_boot_init.sh script:
+**Feeling Lazy?** No worries! 😎 We’ve got you covered. 
+
+From terminal change directory to scripts:
+
+    cd scripts
+
+Execute all the above in one swift command using our supercharged first_boot_init.sh script:
 
     sh first_boot_init.sh
 
