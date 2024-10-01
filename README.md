@@ -1,8 +1,8 @@
 ## Run the project
 
-1. Execute flutter pub get to install the dependencies.
-2. Execute dart run build_runner build to generate the mappers.
-3. Execute flutter gen-l10n to generate the localization files.
+1. Execute 'flutter pub get' to install the dependencies.
+2. Execute 'dart run build_runner build' to generate the mappers.
+3. Execute 'flutter gen-l10n' to generate the localization files.
 
 Alternatively you can use the following command to execute all the steps at once, executing the `first_boot_init.sh` script from terminal:
 
