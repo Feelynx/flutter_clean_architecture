@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_clean_architecture/core/shared/context_extension.dart';
 import 'package:flutter_clean_architecture/features/bottom_navigation/home/cubit/home_cubit.dart';
 import 'package:flutter_clean_architecture/features/shared/loading_widget.dart';
 
@@ -31,7 +32,7 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Welcome,\n${state.user.firstName} ${state.user.lastName}',
+                        context.l10n.welcome('${state.user.firstName} ${state.user.lastName}'),
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,

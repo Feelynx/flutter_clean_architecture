@@ -12,9 +12,10 @@ class ErrorDialog {
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
+        return AlertDialog.adaptive(
           title: Text(title ?? context.l10n.genericErrorTitle),
           content: Text(message ?? context.l10n.genericErrorMessage),
+          contentPadding: const EdgeInsets.all(16),
           actions: <Widget>[
             if (onClose != null)
               TextButton(
@@ -22,7 +23,7 @@ class ErrorDialog {
                   Navigator.of(context).pop();
                   onClose();
                 },
-                child: const Text('Close'),
+                child: Text(context.l10n.close),
               ),
             if (onRetry != null)
               TextButton(
@@ -30,7 +31,7 @@ class ErrorDialog {
                   Navigator.of(context).pop();
                   onRetry();
                 },
-                child: const Text('Retry'),
+                child: Text(context.l10n.retry),
               ),
           ],
         );

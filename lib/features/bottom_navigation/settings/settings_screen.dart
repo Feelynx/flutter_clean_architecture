@@ -16,8 +16,8 @@ class SettingsScreen extends StatelessWidget {
           children: [
             ListTile(
               contentPadding: EdgeInsets.zero,
-              title: Text('Theme'),
-              subtitle: Text('Select the theme of the app'),
+              title: Text(context.l10n.theme),
+              subtitle: Text(context.l10n.themeMessage),
               titleTextStyle: context.textTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -51,8 +51,8 @@ class SettingsScreen extends StatelessWidget {
             Divider(),
             ListTile(
               contentPadding: EdgeInsets.zero,
-              title: Text('Logout'),
-              subtitle: Text('Logout from the app'),
+              title: Text(context.l10n.logout),
+              subtitle: Text(context.l10n.logoutMessage),
               trailing: const Icon(Icons.logout),
               onTap: () => authNotifier.doLogout(),
             ),

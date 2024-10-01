@@ -50,6 +50,10 @@ dependencies:
   drift: ^2.20.3
   drift_flutter: ^0.2.0
 
+  # Animation
+  lottie: ^3.1.2
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -67,11 +71,5 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
-    - assets/launcher_icon/
     - assets/icons/
-
-flutter_native_splash:
-  background_image: "assets/splash_screen/background.png"
-  image: "assets/splash_screen/logo.png"
-  android_12:
-    image: "assets/splash_screen/logo.png"
+    - assets/json/
