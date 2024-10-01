@@ -14,6 +14,6 @@ export 'entities/user/coordinates_entity.dart';
 export 'entities/user/address_entity.dart';
 export 'entities/user/bank_entity.dart';
 export 'entities/user/hair_entity.dart';
-export 'entities/login_request_entity.dart';
+export 'entities/user_session_request_entity.dart';
 export 'entities/base_entity.dart';
-export 'entities/login_response_entity.dart';
+export 'entities/user_session_response_entity.dart';

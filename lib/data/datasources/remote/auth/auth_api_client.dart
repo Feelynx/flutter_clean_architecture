@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_clean_architecture/data/dto/login_request_dto.dart';
-import 'package:flutter_clean_architecture/data/dto/login_response_dto.dart';
-import 'package:flutter_clean_architecture/data/dto/refresh_token_request_dto.dart';
-import 'package:flutter_clean_architecture/data/dto/refresh_token_response_dto.dart';
+import 'package:flutter_clean_architecture/data/dto/user_session_request_dto.dart';
+import 'package:flutter_clean_architecture/data/dto/user_session_response_dto.dart';
+import 'package:flutter_clean_architecture/data/dto/refresh_user_session_request_dto.dart';
+import 'package:flutter_clean_architecture/data/dto/refresh_user_session_response_dto.dart';
 import 'package:flutter_clean_architecture/data/dto/user/user_dto.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -13,13 +13,13 @@ abstract class AuthApiClient {
   factory AuthApiClient(Dio dio) = _AuthApiClient;
 
   @POST('/auth/login')
-  Future<AuthResponseDTO> login(
-    @Body() AuthRequestDTO authRequestModel,
+  Future<UserSessionResponseDTO> getUserSession(
+    @Body() UserSessionRequestDTO authRequestModel,
   );
 
   @POST('/auth/refresh')
-  Future<RefreshTokenResponseDTO> refreshToken(
-    @Body() RefreshTokenRequestDTO refreshTokenRequestModel,
+  Future<RefreshUserSessionResponseDTO> refreshUserSession(
+    @Body() RefreshUserSessionRequestDTO refreshTokenRequestModel,
   );
 
   @GET('/auth/me')

@@ -22,13 +22,14 @@ class _AuthApiClient implements AuthApiClient {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AuthResponseDTO> login(AuthRequestDTO authRequestModel) async {
+  Future<UserSessionResponseDTO> getUserSession(
+      UserSessionRequestDTO authRequestModel) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(authRequestModel.toJson());
-    final _options = _setStreamType<AuthResponseDTO>(Options(
+    final _options = _setStreamType<UserSessionResponseDTO>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -45,9 +46,9 @@ class _AuthApiClient implements AuthApiClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AuthResponseDTO _value;
+    late UserSessionResponseDTO _value;
     try {
-      _value = AuthResponseDTO.fromJson(_result.data!);
+      _value = UserSessionResponseDTO.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -56,14 +57,14 @@ class _AuthApiClient implements AuthApiClient {
   }
 
   @override
-  Future<RefreshTokenResponseDTO> refreshToken(
-      RefreshTokenRequestDTO refreshTokenRequestModel) async {
+  Future<RefreshUserSessionResponseDTO> refreshUserSession(
+      RefreshUserSessionRequestDTO refreshTokenRequestModel) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(refreshTokenRequestModel.toJson());
-    final _options = _setStreamType<RefreshTokenResponseDTO>(Options(
+    final _options = _setStreamType<RefreshUserSessionResponseDTO>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -80,9 +81,9 @@ class _AuthApiClient implements AuthApiClient {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late RefreshTokenResponseDTO _value;
+    late RefreshUserSessionResponseDTO _value;
     try {
-      _value = RefreshTokenResponseDTO.fromJson(_result.data!);
+      _value = RefreshUserSessionResponseDTO.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

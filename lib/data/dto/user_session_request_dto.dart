@@ -1,26 +1,26 @@
 import 'package:flutter_clean_architecture/data/dto/base_dto.dart';
-import 'package:flutter_clean_architecture/domain/entities/login_request_entity.dart';
+import 'package:flutter_clean_architecture/domain/entities/user_session_request_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'login_request_dto.g.dart';
+part 'user_session_request_dto.g.dart';
 
 @JsonSerializable(
   createToJson: true,
   explicitToJson: true,
 )
-class AuthRequestDTO extends BaseDTO<LoginRequestEntity> {
+class UserSessionRequestDTO extends BaseDTO<UserSessionRequestEntity> {
   final String username;
   final String password;
   final int? expiresInMins;
 
-  const AuthRequestDTO({
+  const UserSessionRequestDTO({
     required this.username,
     required this.password,
     this.expiresInMins,
   });
 
   @override
-  LoginRequestEntity toEntity() => LoginRequestEntity(
+  UserSessionRequestEntity toEntity() => UserSessionRequestEntity(
         username: username,
         password: password,
         expiresInMins: expiresInMins,
@@ -29,5 +29,7 @@ class AuthRequestDTO extends BaseDTO<LoginRequestEntity> {
   @override
   List<Object?> get props => [username, password, expiresInMins];
 
-  Map<String, dynamic> toJson() => _$AuthRequestDTOToJson(this);
+  factory UserSessionRequestDTO.fromJson(Map<String, dynamic> json) => _$UserSessionRequestDTOFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserSessionRequestDTOToJson(this);
 }

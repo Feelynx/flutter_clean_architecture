@@ -1,19 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_request_dto.dart';
+part of 'user_session_request_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AuthRequestDTO _$AuthRequestDTOFromJson(Map<String, dynamic> json) =>
-    AuthRequestDTO(
+UserSessionRequestDTO _$UserSessionRequestDTOFromJson(
+        Map<String, dynamic> json) =>
+    UserSessionRequestDTO(
       username: json['username'] as String,
       password: json['password'] as String,
       expiresInMins: (json['expiresInMins'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$AuthRequestDTOToJson(AuthRequestDTO instance) =>
+Map<String, dynamic> _$UserSessionRequestDTOToJson(
+        UserSessionRequestDTO instance) =>
     <String, dynamic>{
       'username': instance.username,
       'password': instance.password,

@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_response_dto.dart';
+part of 'user_session_response_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AuthResponseDTO _$AuthResponseDTOFromJson(Map<String, dynamic> json) =>
-    AuthResponseDTO(
+UserSessionResponseDTO _$UserSessionResponseDTOFromJson(
+        Map<String, dynamic> json) =>
+    UserSessionResponseDTO(
       accessToken: json['accessToken'] as String?,
       refreshToken: json['refreshToken'] as String?,
       id: (json['id'] as num?)?.toInt(),
@@ -19,7 +20,8 @@ AuthResponseDTO _$AuthResponseDTOFromJson(Map<String, dynamic> json) =>
       image: json['image'] as String?,
     );
 
-Map<String, dynamic> _$AuthResponseDTOToJson(AuthResponseDTO instance) =>
+Map<String, dynamic> _$UserSessionResponseDTOToJson(
+        UserSessionResponseDTO instance) =>
     <String, dynamic>{
       'accessToken': instance.accessToken,
       'refreshToken': instance.refreshToken,

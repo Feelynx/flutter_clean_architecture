@@ -9,9 +9,9 @@ class LoginCubit extends Cubit<LoginState> {
 
   final AuthUseCases authUseCases;
 
-  void login(LoginRequestEntity request) async {
+  void login(UserSessionRequestEntity request) async {
     emit(LoginLoading());
-    final result = await authUseCases.getToken(request);
+    final result = await authUseCases.getUserSession(request);
     result.when(
       (data) async {
         authNotifier.doLogin(data);

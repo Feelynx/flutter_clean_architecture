@@ -1,11 +1,11 @@
-import 'package:flutter_clean_architecture/data/dto/refresh_token_response_dto.dart';
+import 'package:flutter_clean_architecture/data/dto/refresh_user_session_response_dto.dart';
 import 'package:flutter_clean_architecture/domain/entities/base_entity.dart';
 
-class RefreshTokenResponseEntity extends BaseEntity<RefreshTokenResponseDTO> {
+class RefreshUserSessionResponseEntity extends BaseEntity<RefreshUserSessionResponseDTO> {
   final String? accessToken;
   final String? refreshToken;
 
-  const RefreshTokenResponseEntity({
+  const RefreshUserSessionResponseEntity({
     this.accessToken,
     this.refreshToken,
   });
@@ -14,7 +14,7 @@ class RefreshTokenResponseEntity extends BaseEntity<RefreshTokenResponseDTO> {
   List<Object?> get props => [accessToken, refreshToken];
 
   @override
-  RefreshTokenResponseDTO toDTO() => RefreshTokenResponseDTO(
+  RefreshUserSessionResponseDTO toDTO() => RefreshUserSessionResponseDTO(
         accessToken: accessToken,
         refreshToken: refreshToken,
       );

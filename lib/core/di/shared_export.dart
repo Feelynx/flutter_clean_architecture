@@ -4,6 +4,7 @@ import 'package:flutter_clean_architecture/core/service/flutter_secure_storage_s
 import 'package:flutter_clean_architecture/core/service/shared_preferences_service.dart';
 import 'package:flutter_clean_architecture/data/data_exports.dart';
 import 'package:flutter_clean_architecture/domain/domain_exports.dart';
+import 'package:flutter_clean_architecture/domain/usecases/home_usecases.dart';
 import 'package:get_it/get_it.dart';
 
 Environment get environment => GetIt.I<Environment>();
@@ -34,3 +35,4 @@ AppSettingsLocalRepository get appSettingsLocalRepository => GetIt.I<AppSettings
 AuthUseCases get authUseCases => GetIt.I<AuthUseCases>();
 ProfileUseCases get profileUseCases => GetIt.I<ProfileUseCases>();
 AppSettingsUseCases get appSettingsUseCases => GetIt.I<AppSettingsUseCases>();
+HomeUseCases get homeUseCases => GetIt.I<HomeUseCases>();

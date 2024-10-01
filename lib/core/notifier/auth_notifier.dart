@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clean_architecture/domain/domain_exports.dart';
-import 'package:flutter_clean_architecture/domain/entities/refresh_token_request_entity.dart';
+import 'package:flutter_clean_architecture/domain/entities/refresh_user_session_request_entity.dart';
 
 class AuthNotifier with ChangeNotifier {
   final AuthUseCases authUseCases;
   var _status = AuthStatus.notAuthenticated;
-  LoginResponseEntity? _loginResponseEntity;
+  UserSessionResponseEntity? _loginResponseEntity;
 
   AuthNotifier({required this.authUseCases});
 
   AuthStatus get status => _status;
-  LoginResponseEntity? get loginResponseEntity => _loginResponseEntity;
+  UserSessionResponseEntity? get loginResponseEntity => _loginResponseEntity;
 
-  Future<void> doLogin(LoginResponseEntity? loginResponseEntity) async {
+  Future<void> doLogin(UserSessionResponseEntity? loginResponseEntity) async {
     if (loginResponseEntity == null) {
       doLogout();
       return;
@@ -28,7 +28,7 @@ class AuthNotifier with ChangeNotifier {
   }
 
   Future<void> checkToken() async {
-    final data = await authUseCases.getLocalAuthToken();
+    final data = await authUseCases.getLocalUserSession();
     data.when(
       (data) {
         if (data.accessToken != null && data.refreshToken != null) {
@@ -44,8 +44,8 @@ class AuthNotifier with ChangeNotifier {
   }
 
   Future<void> refreshAuthToken() async {
-    final response = await authUseCases.refreshToken(
-      RefreshTokenRequestEntity(
+    final response = await authUseCases.refreshUserSession(
+      RefreshUserSessionRequestEntity(
         refreshToken: loginResponseEntity?.refreshToken ?? '',
       ),
     );

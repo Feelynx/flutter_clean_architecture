@@ -1,12 +1,12 @@
-import 'package:flutter_clean_architecture/data/dto/login_request_dto.dart';
+import 'package:flutter_clean_architecture/data/dto/user_session_request_dto.dart';
 import 'package:flutter_clean_architecture/domain/entities/base_entity.dart';
 
-class LoginRequestEntity extends BaseEntity<AuthRequestDTO> {
+class UserSessionRequestEntity extends BaseEntity<UserSessionRequestDTO> {
   final String username;
   final String password;
   final int? expiresInMins;
 
-  const LoginRequestEntity({
+  const UserSessionRequestEntity({
     required this.username,
     required this.password,
     this.expiresInMins,
@@ -16,8 +16,8 @@ class LoginRequestEntity extends BaseEntity<AuthRequestDTO> {
   List<Object?> get props => [username, password, expiresInMins];
 
   @override
-  AuthRequestDTO toDTO() {
-    return AuthRequestDTO(
+  UserSessionRequestDTO toDTO() {
+    return UserSessionRequestDTO(
       username: username,
       password: password,
       expiresInMins: expiresInMins,

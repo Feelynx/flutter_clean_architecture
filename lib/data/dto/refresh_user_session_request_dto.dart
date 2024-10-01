@@ -1,24 +1,24 @@
 import 'package:flutter_clean_architecture/data/dto/base_dto.dart';
-import 'package:flutter_clean_architecture/domain/entities/refresh_token_request_entity.dart';
+import 'package:flutter_clean_architecture/domain/entities/refresh_user_session_request_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'refresh_token_request_dto.g.dart';
+part 'refresh_user_session_request_dto.g.dart';
 
 @JsonSerializable(
   createToJson: true,
   explicitToJson: true,
 )
-class RefreshTokenRequestDTO extends BaseDTO<RefreshTokenRequestEntity> {
+class RefreshUserSessionRequestDTO extends BaseDTO<RefreshUserSessionRequestEntity> {
   final String refreshToken;
   final int? expiresInMins;
 
-  const RefreshTokenRequestDTO({
+  const RefreshUserSessionRequestDTO({
     required this.refreshToken,
     this.expiresInMins,
   });
 
   @override
-  RefreshTokenRequestEntity toEntity() => RefreshTokenRequestEntity(
+  RefreshUserSessionRequestEntity toEntity() => RefreshUserSessionRequestEntity(
         refreshToken: refreshToken,
         expiresInMins: expiresInMins,
       );
@@ -26,5 +26,5 @@ class RefreshTokenRequestDTO extends BaseDTO<RefreshTokenRequestEntity> {
   @override
   List<Object?> get props => [refreshToken, expiresInMins];
 
-  Map<String, dynamic> toJson() => _$RefreshTokenRequestDTOToJson(this);
+  Map<String, dynamic> toJson() => _$RefreshUserSessionRequestDTOToJson(this);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_clean_architecture/domain/entities/login_request_entity.dart';
+import 'package:flutter_clean_architecture/domain/entities/user_session_request_entity.dart';
 import 'package:flutter_clean_architecture/core/shared/context_extension.dart';
 import 'package:flutter_clean_architecture/features/login/cubit/login_cubit.dart';
 import 'package:flutter_clean_architecture/features/shared/error_dialog.dart';
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState?.validate() ?? false) {
-                            final request = LoginRequestEntity(
+                            final request = UserSessionRequestEntity(
                               username: _emailController.text,
                               password: _passwordController.text,
                             );

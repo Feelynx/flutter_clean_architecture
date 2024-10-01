@@ -1,7 +1,7 @@
-import 'package:flutter_clean_architecture/data/dto/login_response_dto.dart';
+import 'package:flutter_clean_architecture/data/dto/user_session_response_dto.dart';
 import 'package:flutter_clean_architecture/domain/entities/base_entity.dart';
 
-class LoginResponseEntity extends BaseEntity {
+class UserSessionResponseEntity extends BaseEntity {
   final String? accessToken;
   final String? refreshToken;
   final int? id;
@@ -12,7 +12,7 @@ class LoginResponseEntity extends BaseEntity {
   final String? gender;
   final String? image;
 
-  const LoginResponseEntity({
+  const UserSessionResponseEntity({
     this.accessToken,
     this.refreshToken,
     this.id,
@@ -25,7 +25,7 @@ class LoginResponseEntity extends BaseEntity {
   });
 
   @override
-  AuthResponseDTO toDTO() => AuthResponseDTO(
+  UserSessionResponseDTO toDTO() => UserSessionResponseDTO(
         accessToken: accessToken,
         refreshToken: refreshToken,
         id: id,
@@ -40,7 +40,7 @@ class LoginResponseEntity extends BaseEntity {
   @override
   List<Object?> get props => [accessToken, refreshToken, id, username, email, firstName, lastName];
 
-  LoginResponseEntity copyWith({
+  UserSessionResponseEntity copyWith({
     String? accessToken,
     String? refreshToken,
     int? id,
@@ -51,7 +51,7 @@ class LoginResponseEntity extends BaseEntity {
     String? gender,
     String? image,
   }) {
-    return LoginResponseEntity(
+    return UserSessionResponseEntity(
       accessToken: accessToken ?? this.accessToken,
       refreshToken: refreshToken ?? this.refreshToken,
       id: id ?? this.id,

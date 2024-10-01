@@ -44,7 +44,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   const Gap(8),
                   Text(
-                    '${state.user.company?.title}\n@${state.user.company?.name}' ?? '',
+                    '${state.user.company?.title}\n@${state.user.company?.name}',
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontSize: 16,
