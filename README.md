@@ -8,7 +8,7 @@ Alternatively you can use the following command to execute all the steps at once
 
     sh first_boot_init.sh
 
-The app is realized using the user from Dummy JSON API, you can find the users here https://dummyjson.com/users.
+The app is realized using the user from Dummy JSON API, you can find the users here [Dummy JSON](https://dummyjson.com/users)
 
 A detailed documentation about the clean architecture used in this project can be found
-in the Wiki section https://github.com/Feelynx/flutter_clean_architecture/wiki/Flutter-Clean-Architecture
+in the Wiki section [Wiki](https://github.com/Feelynx/flutter_clean_architecture/wiki/Flutter-Clean-Architecture)
