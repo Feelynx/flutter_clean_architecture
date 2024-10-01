@@ -1,4 +1,5 @@
-#!/bin/bash
+echo moving to the project directory...
+cd ..
 
 # Define mandatory directories
 mandatory_directories=("lib/data" "lib/domain")

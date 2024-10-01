@@ -1,3 +1,6 @@
+echo moving to the project directory...
+cd ..
+
 echo "Downloading dependencies..."
 flutter pub get
 

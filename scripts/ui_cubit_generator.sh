@@ -1,4 +1,5 @@
-#!/bin/bash
+echo moving to the project directory...
+cd ..
 
 # Initialize the with_cubit variable to true
 WITH_cubit=true
