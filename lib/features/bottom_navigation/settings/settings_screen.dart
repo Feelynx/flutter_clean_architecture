@@ -9,34 +9,55 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        children: [
-          DropdownButton<ThemeMode>(
-            onChanged: context.read<ThemeCubit>().changeMode,
-            value: context.watch<ThemeCubit>().state,
-            items: [
-              DropdownMenuItem(
-                value: ThemeMode.light,
-                child: Text(context.l10n.light),
+    return SafeArea(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text('Theme'),
+              subtitle: Text('Select the theme of the app'),
+              titleTextStyle: context.textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.bold,
               ),
-              DropdownMenuItem(
-                value: ThemeMode.dark,
-                child: Text(context.l10n.dark),
+              trailing: ToggleButtons(
+                isSelected: [
+                  context.watch<ThemeCubit>().state == ThemeMode.system,
+                  context.watch<ThemeCubit>().state == ThemeMode.light,
+                  context.watch<ThemeCubit>().state == ThemeMode.dark,
+                ],
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
+                onPressed: (index) {
+                  context.read<ThemeCubit>().changeMode(ThemeMode.values[index]);
+                },
+                textStyle: context.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(Icons.contrast),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(Icons.light_mode_outlined),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(Icons.dark_mode_outlined),
+                  ),
+                ],
               ),
-              DropdownMenuItem(
-                value: ThemeMode.system,
-                child: Text(context.l10n.system),
-              ),
-            ],
-          ),
-          ListTile(
-            title: Text('Logout'),
-            onTap: () => authNotifier.doLogout(),
-            subtitle: Text('Logout from the app'),
-          ),
-        ],
+            ),
+            Divider(),
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text('Logout'),
+              subtitle: Text('Logout from the app'),
+              trailing: const Icon(Icons.logout),
+              onTap: () => authNotifier.doLogout(),
+            ),
+          ],
+        ),
       ),
     );
   }
