@@ -2,6 +2,10 @@
 
 This project follows the principles of Clean Architecture, which separates the code into different layers: DTOs, Entities, Data Sources, Repositories, and Use Cases. This separation helps in maintaining a clear structure, making the code more maintainable and testable.
 
+## Users to use the app
+the app is realized using the user from Dummy JSON API, you can find the users here:
+[https://dummyjson.com/users]
+
 ## Layers
 
 1. DTO (Data Transfer Object): Used for transferring data between different layers.
