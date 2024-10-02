@@ -18,6 +18,7 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   final AuthUseCases authUseCases;
+  late Timer _timer;
 
   void togglePasswordVisibility() {
     final isPasswordVisible = !state.isPasswordObscured;
@@ -28,7 +29,7 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   void _startMessageRotation() {
-    Timer.periodic(
+    _timer = Timer.periodic(
       Duration(seconds: 3),
       (timer) {
         final currentMessageIndex = (state.currentMessageIndex + 1) % kWelcomeMessageList.length;
@@ -48,6 +49,7 @@ class LoginCubit extends Cubit<LoginState> {
     final result = await authUseCases.getUserSession(request);
     result.when(
       (data) async {
+        _timer.cancel();
         authNotifier.doLogin(data);
       },
       (error) {
@@ -59,5 +61,11 @@ class LoginCubit extends Cubit<LoginState> {
         authNotifier.doLogout();
       },
     );
+  }
+
+  @override
+  Future<void> close() {
+    _timer.cancel();
+    return super.close();
   }
 }
