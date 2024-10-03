@@ -77,7 +77,7 @@ final goRouter = GoRouter(
               path: ScreenPaths.settings,
               builder: (context, state) => BlocProvider(
                 create: (context) => SettingsCubit(),
-                child: const SettingsScreen(),
+                child: const SettingsPage(),
               ),
             ),
           ],

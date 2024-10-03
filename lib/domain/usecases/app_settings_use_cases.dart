@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/domain/entities/app_settings_entity.dart';
 import 'package:flutter_clean_architecture/domain/repositories/app_settings_local_repository.dart';
 
 class AppSettingsUseCases {
@@ -6,11 +6,9 @@ class AppSettingsUseCases {
 
   const AppSettingsUseCases(this.appSettingsLocalRepository);
 
-  Future<void> setThemeMode(int themeModeIndex) {
-    return appSettingsLocalRepository.setThemeMode(themeModeIndex);
+  Future<void> setAppSettings(AppSettingsEntity appSettings) {
+    return appSettingsLocalRepository.setAppSettings(appSettings);
   }
 
-  Future<ThemeMode> getThemeMode() {
-    return appSettingsLocalRepository.getThemeMode();
-  }
+  Future<AppSettingsEntity> getAppSettings() async => await appSettingsLocalRepository.getAppSettings();
 }

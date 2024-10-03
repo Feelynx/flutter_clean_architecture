@@ -17,48 +17,46 @@ class ProfilePage extends StatelessWidget {
           ErrorDialog.showErrorDialog(context: context, title: 'Error', message: state.message);
         }
       },
-      builder: (context, state) => switch (state) {
-        ProfileInitial() || ProfileLoading() => const LoadingWidget(
-            isTransparent: true,
-          ),
-        ProfileLoaded() => Stack(
-            children: [
-              SafeArea(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+      builder: (context, state) => SafeArea(
+        child: RefreshIndicator(
+          onRefresh: () {
+            context.read<ProfileCubit>().getUser();
+            return Future.value();
+          },
+          child: switch (state) {
+            ProfileInitial() || ProfileLoading() => const LoadingWidget(
+                isTransparent: true,
+              ),
+            ProfileLoaded() => CustomScrollView(
+                slivers: [
+                  SliverFillRemaining(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           CircleAvatar(
                             radius: 50,
                             backgroundImage: NetworkImage(state.user.image ?? ''),
                           ),
-                        ],
-                      ),
-                      const Gap(16),
-                      Text(
-                        '${state.user.firstName} ${state.user.lastName}',
-                        style: const TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Gap(8),
-                      Text(
-                        '${state.user.company?.title}\n@${state.user.company?.name}',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 16,
-                        ),
-                      ),
-                      const Gap(24),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                          const Gap(16),
+                          Text(
+                            '${state.user.firstName} ${state.user.lastName}',
+                            style: const TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Gap(8),
+                          Text(
+                            '${state.user.company?.title}\n@${state.user.company?.name}',
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                          const Gap(24),
                           ListTile(
                             contentPadding: EdgeInsets.zero,
                             title: Text(
@@ -76,14 +74,14 @@ class ProfilePage extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
-        _ => Container(),
-      },
+            _ => Container(),
+          },
+        ),
+      ),
     );
   }
 }

@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ThemeCubit(appSettingsUseCases),
-      child: BlocBuilder<ThemeCubit, ThemeMode>(
-        builder: (context, mode) {
+      child: BlocBuilder<ThemeCubit, ThemeState>(
+        builder: (context, state) {
           return GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTap: FocusManager.instance.primaryFocus?.unfocus,
@@ -23,11 +23,13 @@ class MyApp extends StatelessWidget {
               supportedLocales: AppLocalizations.supportedLocales,
               theme: AppTheme.fromBrightness(
                 brightness: Brightness.light,
+                seedColor: state.appSettings.colorEnum,
               ).toThemeData(),
               darkTheme: AppTheme.fromBrightness(
                 brightness: Brightness.dark,
+                seedColor: state.appSettings.colorEnum,
               ).toThemeData(),
-              themeMode: mode,
+              themeMode: state.appSettings.themeModeEnum,
               routerConfig: goRouter,
             ),
           );

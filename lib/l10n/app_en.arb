@@ -18,6 +18,9 @@
   "themeMessage": "Select theme",
   "logout": "Logout",
   "logoutMessage" : "Disconnect the current user",
-    "contacts": "Contacts",
-    "welcome": "Welcome {name}"
+  "contacts": "Contacts",
+  "welcome": "Welcome {name}",
+  "themeColor": "Theme color",
+  "themeColorMessage": "Select the theme color",
+  "themeScrollMessage": "Scroll horizontally to navigate colors\nTap to select"
 }

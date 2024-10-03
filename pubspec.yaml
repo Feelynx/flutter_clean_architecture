@@ -46,10 +46,6 @@ dependencies:
   # Utils
   equatable: ^2.0.5
 
-  # Local db
-  drift: ^2.20.3
-  drift_flutter: ^0.2.0
-
   # Animation
   lottie: ^3.1.2
 
@@ -65,7 +61,6 @@ dev_dependencies:
   retrofit_generator: ^9.1.2
   flutter_native_splash: ^2.4.1
   flutter_launcher_icons: ^0.14.1
-  drift_dev: ^2.20.3
 
 flutter:
   generate: true

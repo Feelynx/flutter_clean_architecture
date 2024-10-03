@@ -19,5 +19,8 @@
   "logout": "Logout",
   "logoutMessage" : "Disconnetti l'utente corrente",
   "contacts": "Contatti",
-  "welcome": "Benvenuto {name}"
+  "welcome": "Benvenuto {name}",
+  "themeColor": "Colore del tema",
+  "themeColorMessage": "Seleziona il colore del tema",
+  "themeScrollMessage": "Scorri orizzontalmente per navigare tra i colori\nTocca per selezionare"
 }

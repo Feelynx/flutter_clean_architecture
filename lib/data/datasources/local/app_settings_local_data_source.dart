@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_clean_architecture/data/dto/app_settings_dto.dart';
 
 abstract class AppSettingsLocalDataSource {
-  Future<void> setThemeMode(int themeModeIndex);
-  Future<ThemeMode> getThemeMode();
+  Future<void> setAppSettings(AppSettingsDTO appSettings);
+  Future<AppSettingsDTO> getAppSettings();
 }

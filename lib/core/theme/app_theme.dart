@@ -3,14 +3,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   final Brightness brightness;
+  final Color seedColor;
   late ColorScheme colorScheme;
 
   AppTheme.fromBrightness({
     required this.brightness,
+    required this.seedColor,
   }) {
     colorScheme = ColorScheme.fromSeed(
       brightness: brightness,
-      seedColor: Colors.blueAccent,
+      seedColor: seedColor,
     );
   }
 
