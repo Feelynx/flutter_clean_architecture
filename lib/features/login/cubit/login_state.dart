@@ -11,19 +11,19 @@ sealed class LoginState extends Equatable {
 }
 
 class LoginInitial extends LoginState {
-  LoginInitial({required super.isPasswordObscured, required super.currentMessageIndex});
+  const LoginInitial({required super.isPasswordObscured, required super.currentMessageIndex});
 }
 
 class LoginLoaded extends LoginState {
-  LoginLoaded({required super.isPasswordObscured, required super.currentMessageIndex});
+  const LoginLoaded({required super.isPasswordObscured, required super.currentMessageIndex});
 }
 
 class LoginLoading extends LoginState {
-  LoginLoading({required super.isPasswordObscured, required super.currentMessageIndex});
+  const LoginLoading({required super.isPasswordObscured, required super.currentMessageIndex});
 }
 
 class LoginError extends LoginState {
   final String message;
 
-  LoginError(this.message, {required super.isPasswordObscured, required super.currentMessageIndex});
+  const LoginError(this.message, {required super.isPasswordObscured, required super.currentMessageIndex});
 }
