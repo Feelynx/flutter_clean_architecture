@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           return GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onTap: FocusManager.instance.primaryFocus?.unfocus,
+            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
             child: MaterialApp.router(
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
