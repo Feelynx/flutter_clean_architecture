@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_clean_architecture/l10n/app_localizations.dart';
 import 'package:flutter_clean_architecture/core/di/shared_export.dart';
 import 'package:flutter_clean_architecture/core/routes/go_router_config.dart';
 import 'package:flutter_clean_architecture/core/theme/app_theme.dart';
